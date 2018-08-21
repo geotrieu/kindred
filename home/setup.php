@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
   <body>
-    <div class='container'>
+    <div class='container col-'>
       <div class="page-header">
-        <h1><img src="../logo.png" alt="Kindred Logo" style="width:40px;height:40px;vertical-align:middle;" />  Kindred</h1>
+        <h1 style="font-size:100px;color:white;"><img src="../logo.png" alt="Kindred Logo" style="width:125px;height:125px;vertical-align:middle;" />  KINDRED</h1>
       </div>
-      <h2>Profile Registration</h2>
+      <h2 style="font-size:50px;color:white">Profile Registration</h2>
       <br>
       <?php
         if (isset($_POST["submit"])) {
@@ -62,6 +62,19 @@
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
           }
+          $_SESSION["fullname"] = $_POST["fullname"];
+          $_SESSION["age"] = $_POST["age"];
+          $_SESSION["gender"] = $_POST["gender"];
+          $_SESSION["city"] = $_POST["city"];
+          $_SESSION["country"] = $_POST["country"];
+          $_SESSION["occupation"] = $_POST["occupation"];
+          $_SESSION["years"] = $_POST["years"];
+          $_SESSION["personality"] = $_POST["personality"];
+          $_SESSION["social"] = $_POST["social"];
+          $_SESSION["hobby"] = $_POST["hobby"];
+          $_SESSION["habit"] = $_POST["habit"];
+          $_SESSION["interaction"] = $_POST["interaction"];
+          $_SESSION["family"] = $_POST["family"];
         }
       ?>
       <form method="post" enctype="multipart/form-data">

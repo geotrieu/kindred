@@ -93,6 +93,9 @@
                 // output data of each row
                 $counter = 0;
                 while($row = $result->fetch_assoc()) {
+                  if ($row["username"] == $_SESSION["username"]) {
+                    continue;
+                  }
                   if ($counter == 0) {
                     echo "<div class='row'>";
                   }
@@ -103,6 +106,29 @@
                       </a>
                       <br>
                       <h1>" . $row["fullname"] . "</h1>
+                  ";
+                  if ($_SESSION["city"] == $row["canadiancity"]) {
+                    echo "<h6>+ You both are in " . $row["canadiancity"] . "</h6>";
+                  }
+                  if ($_SESSION["country"] == $row["countryorigin"]) {
+                    echo "<h6>+ You both are from " . $row["countryorigin"] . "</h6>";
+                  }
+                  if ($_SESSION["occupation"] == $row["occupation"]) {
+                    echo "<h6>+ You both are " . $row["occupation"] . "s</h6>";
+                  }
+                  if ($_SESSION["personality"] == $row["personality"]) {
+                    echo "<h6>+ You both are " . $row["personality"] . "s</h6>";
+                  }
+                  if ($_SESSION["social"] == $row["social"]) {
+                    echo "<h6>+ You both like being " . $row["social"] . "</h6>";
+                  }
+                  if ($_SESSION["hobby"] == $row["hobbies"]) {
+                    echo "<h6>+ You both like " . $row["hobbies"] . "</h6>";
+                  }
+                  if ($_SESSION["interaction"] == $row["interaction"]) {
+                    echo "<h6>+ You both like interacting " . $row["interaction"] . "</h6>";
+                  }
+                  echo "
                   </div>
                   ";
                   if ($counter == 3) {
@@ -119,120 +145,13 @@
             }
             $conn->close();
          ?>
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-        </div>
         <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-3 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Kindred 2018</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -240,13 +159,6 @@
 
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
 </body>
 
 </html>

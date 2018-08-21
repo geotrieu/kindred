@@ -11,7 +11,7 @@
   <body>
     <div class="container">
       <div class="page-header">
-        <h1><img src="logo.png" alt="Kindred Logo" style="width:40px;height:40px;vertical-align:middle;" />  Kindred</h1>
+        <h1 style="font-size:100px;color:white;"><img src="../logo.png" alt="Kindred Logo" style="width:125px;height:125px;vertical-align:middle;" />  KINDRED</h1>
       </div>
       <?php
         include("navbar.php");

@@ -21,3 +21,7 @@ body {
 .pagination {
   margin-bottom: 30px;
 }
+
+h6 {
+  color: green;
+}

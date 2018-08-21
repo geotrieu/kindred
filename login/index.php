@@ -57,6 +57,22 @@
                   while($row = $result->fetch_assoc()) {
                     $_SESSION["username"] = $_POST["username"];
                     $_SESSION["type"] = $row["type"];
+                    $sql = "SELECT * FROM memberprofile WHERE username='" . $_POST["username"] . "'";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    $_SESSION["fullname"] = $row["fullname"];
+                    $_SESSION["age"] = $row["age"];
+                    $_SESSION["gender"] = $row["gender"];
+                    $_SESSION["city"] = $row["canadiancity"];
+                    $_SESSION["country"] = $row["countryorigin"];
+                    $_SESSION["occupation"] = $row["occupation"];
+                    $_SESSION["years"] = $row["yearsincanada"];
+                    $_SESSION["personality"] = $row["personality"];
+                    $_SESSION["social"] = $row["social"];
+                    $_SESSION["hobby"] = $row["hobbies"];
+                    $_SESSION["habit"] = $row["habits"];
+                    $_SESSION["interaction"] = $row["interaction"];
+                    $_SESSION["family"] = $row["family"];
                   }
                   echo "<h6 style='color:green;'>Login Success! Redirecting you to Kindred in 3 seconds...</h6>";
                   echo "<script>window.setTimeout(function(){window.location.href='../home';}, 3000);</script>";
