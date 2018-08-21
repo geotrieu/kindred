@@ -61,7 +61,7 @@
             if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["type"])) {
               $sql = "INSERT INTO users (username, encryptedpw, email, type) VALUES ('" . $_POST["username"] . "', '" . $_POST["password"] . "', '" . $_POST["email"] . "', '" . $_POST["type"] . "')";
               if ($conn->query($sql) === TRUE) {
-                echo "<h6 style='font-color:green;'>Register Success! Proceed to the login page!</h6>";
+                echo "<h6 style='color:green;'>Register Success! Proceed to the login page!</h6>";
               } else {
                   echo "Error: " . $sql . "<br>" . $conn->error;
               }

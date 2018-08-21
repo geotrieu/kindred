@@ -33,6 +33,8 @@
             <a href="../register">Don't have an account? Register</a>
           </div>
           <?php
+            // Start the session
+            session_start();
             $servername = "localhost";
             $username = "root";
             $password = "";
@@ -52,12 +54,14 @@
 
               if ($result->num_rows > 0) {
                   // output data of each row
-
                   while($row = $result->fetch_assoc()) {
-                      echo "id: " . $row["username"]. " - Name: " . $row["encryptedpw"]. " " . $row["type"]. "<br>";
+                    $_SESSION["username"] = $_POST["username"];
+                    $_SESSION["type"] = $row["type"];
                   }
+                  echo "<h6 style='color:green;'>Login Success! Redirecting you to Kindred in 3 seconds...</h6>";
+                  echo "<script>window.setTimeout(function(){window.location.href='../home';}, 3000);</script>";
               } else {
-                  echo "0 results";
+                  echo "<h6 style='color:red;'>Invalid Details! Check your login details again!</h6>";
               }
               $conn->close();
             }
